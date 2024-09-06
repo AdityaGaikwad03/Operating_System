@@ -57,7 +57,7 @@ void process()
         }
         strcpy(prev_job,cur_job);
         if(cnt == n)
-        break;
+            break;
     }
     printf("end time %d",time);
 }
@@ -88,8 +88,8 @@ void print_output()
         avg_wt = avg_wt + (float)(job[i].wt);
     }
     printf("\n-----------------------------------------------");
-    printf("\n avg wt is %f",avg_wt);
-    printf("\n avg tat is %f",avg_tat);
+    printf("\n avg wt is %f",avg_wt/n);
+    printf("\n avg tat is %f",avg_tat/n);
 }
 int main()
 {
