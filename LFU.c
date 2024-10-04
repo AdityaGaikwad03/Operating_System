@@ -43,3 +43,4 @@ printf("%2d",mem[k][0]);
 printf("\n\n");
 } 
 printf("\nTotal No of Pagefault : %d",pagefault); 
+}
