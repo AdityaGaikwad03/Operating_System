@@ -65,21 +65,19 @@ void print()
 void addlist(int page)
 {
 	Node *ptr=NULL,*temp,*ptr1,*prev;
-        int cnt1=1;
+    int cnt1=1;
 	static int cnt=0;
-        int j;
+    int j;
 	ptr=(Node *)malloc(sizeof(Node));
 	ptr->data=page;
 	ptr->next=NULL;
 	if(start==NULL)
 	{
-
 		start=last=ptr;
 		cnt++;
 	}
 	else if(cnt<n)
 	{
-
 		last->next=ptr;
 		last=ptr;
 		last->next=NULL;
@@ -87,42 +85,37 @@ void addlist(int page)
 	}
 	else
 	{
-          for(temp=start;temp!=NULL;prev=temp,temp=temp->next)
-          {
-              
-             for(j=i+1;j<n1;j++)
-             {
+        for(temp=start;temp!=NULL;prev=temp,temp=temp->next)
+        {      
+            for(j=i+1;j<n1;j++)
+            {
                 if(a[j]==temp->data)
                 {
-                  k=j;
-                  
+            		k=j;  
                 }
-              }
-             if(min<=k)
-             {
+            }
+            if(min<=k)
+            {
                 min=k;
                 ptr1=temp;
-             }
-
-           }
-           if(ptr1==start)
-           {
+            }
+        }
+    	if(ptr1==start)
+        {
             start= start->next;
             last->next=ptr;
             last = ptr;
-           }
-           else if(ptr1==last)
-          {
+        }
+        else if(ptr1==last)
+        {
             last->data=ptr->data;
-          }
-          else
-         {
-              prev->next=ptr1->next;
-              ptr1->next=NULL;              
-              last->next=ptr;
-              last=ptr;
-           }         
-
-
+        }
+        else
+        {
+            prev->next=ptr1->next;
+            ptr1->next=NULL;              
+            last->next=ptr;
+            last=ptr;
+        }         
 	}
 }
